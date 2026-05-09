@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { ThemeToggle } from "./ui/theme-toggle"
-import { GraduationCap, LogIn, User, LogOut, Search, Users, CreditCard, Sparkles } from "lucide-react"
+import { GraduationCap, LogIn, User, LogOut, Search, Users, CreditCard, Sparkles, PlayCircle } from "lucide-react"
 import { useState, useEffect } from "react"
 
 export function Navbar() {
@@ -41,6 +41,10 @@ export function Navbar() {
               <Users className="w-4 h-4" />
               <span>Community</span>
             </Link>
+            <Link href="/class" className="flex items-center gap-2 text-sm font-medium hover:text-accent transition-colors">
+              <PlayCircle className="w-4 h-4" />
+              <span>Classroom</span>
+            </Link>
             <Link href="/pricing" className="flex items-center gap-2 text-sm font-medium hover:text-accent transition-colors">
               <CreditCard className="w-4 h-4" />
               <span>Tiers</span>
@@ -61,7 +65,7 @@ export function Navbar() {
                   </div>
                   <span className="hidden sm:inline">Dashboard</span>
                 </Link>
-                <button 
+                <button
                   onClick={handleSignOut}
                   className="p-2 hover:text-red-500 transition-colors"
                   title="Sign Out"
@@ -70,8 +74,8 @@ export function Navbar() {
                 </button>
               </div>
             ) : (
-              <Link 
-                href="/auth/login" 
+              <Link
+                href="/auth/login"
                 className="flex items-center gap-2 px-4 py-2 bg-accent text-white rounded-lg text-sm font-semibold hover:bg-accent/90 transition-all shadow-lg shadow-accent/20"
               >
                 <LogIn className="w-4 h-4" />
